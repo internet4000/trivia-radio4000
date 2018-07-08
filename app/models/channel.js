@@ -1,8 +1,7 @@
-import Ember from 'ember';
-import DS from 'ember-data';
-import {and, hash} from 'ember-awesome-macros';
-const {Model, attr, hasMany, belongsTo} = DS;
-const {computed, get} = Ember;
+import {computed} from '@ember/object'
+import DS from 'ember-data'
+import {and, hash} from 'ember-awesome-macros'
+const {Model, attr, hasMany} = DS
 
 /*
 	Channel model
@@ -10,44 +9,41 @@ const {computed, get} = Ember;
 	*/
 
 export default Model.extend({
-	created: attr('number'),
-	updated: attr('timestamp'),
+  created: attr('number'),
+  updated: attr('timestamp'),
 
-	title: attr('string'),
-	slug: attr('string'),
-	body: attr('string'),
-	link: attr('string'),
-	isFeatured: attr('boolean'),
-	isPremium: attr('boolean'),
+  title: attr('string'),
+  slug: attr('string'),
+  body: attr('string'),
+  link: attr('string'),
+  isFeatured: attr('boolean'),
+  isPremium: attr('boolean'),
 
-	coordinatesLatitude: attr('number'),
-	coordinatesLongitude: attr('number'),
-	hasCoordinates: and('coordinatesLatitude', 'coordinatesLongitude'),
-	coordinates: hash({
-		lng: 'coordinatesLongitude',
-		lat: 'coordinatesLatitude'
-	}),
+  coordinatesLatitude: attr('number'),
+  coordinatesLongitude: attr('number'),
+  hasCoordinates: and('coordinatesLatitude', 'coordinatesLongitude'),
+  coordinates: hash({
+    lng: 'coordinatesLongitude',
+    lat: 'coordinatesLatitude'
+  }),
 
-	// Set the latest image as the cover image.
-	coverImage: computed('images.[]', function () {
-		return this.get('images.lastObject');
-	}),
+  // Set the latest image as the cover image.
+  coverImage: computed('images.[]', function() {
+    return this.get('images.lastObject')
+  }),
 
-	// This property is toggled by the player setChannel.
-	isInPlayer: false,
+  // Relationships.
+  images: hasMany('image', {async: true}),
+  tracks: hasMany('track', {async: true}),
+  favoriteChannels: hasMany('channel', {inverse: null, async: true}),
+  // channelPublic: belongsTo('channelPublic', {async: true}),
 
-	// Relationships.
-	images: hasMany('image', {async: true}),
-	tracks: hasMany('track', {async: true}),
-	favoriteChannels: hasMany('channel', {inverse: null, async: true}),
-	channelPublic: belongsTo('channelPublic', {async: true}),
+  // Meta data.
+  totalFavorites: computed('favoriteChannels', function() {
+    return this.hasMany('favoriteChannels').ids().length
+  }),
 
-	// Meta data.
-	totalFavorites: computed('favoriteChannels', function () {
-		return this.hasMany('favoriteChannels').ids().length;
-	}),
-
-	totalTracks: computed('tracks.[]', function () {
-		return this.hasMany('tracks').ids().length;
-	})
-});
+  totalTracks: computed('tracks.[]', function() {
+    return this.hasMany('tracks').ids().length
+  })
+})

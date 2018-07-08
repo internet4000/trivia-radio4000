@@ -45,5 +45,8 @@
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
+  },
+  "dependencies": {
+    "ember-awesome-macros": "^2.0.0"
   }
 }
