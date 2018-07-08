@@ -20,7 +20,17 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    // https://console.developers.google.com/apis/credentials/key/2?project=firebase-radio4000
+		youtubeApiKey: 'AIzaSyBPY0xzz4PQEl5hgm-wggEA4Zlho11Rtfk',
+
+		// Radio4000 staging project.
+		firebase: {
+			apiKey: 'AIzaSyDi6cxC167OWaliNMnZkE0BX1XP8ObwdnQ',
+			authDomain: 'radio4000-staging.firebaseapp.com',
+			databaseURL: 'https://radio4000-staging.firebaseio.com'
+		}
   };
 
   if (environment === 'development') {
