@@ -1,0 +1,9 @@
+{{outlet}}
+
+<ul>
+{{#each model as |channel|}}
+  <li>
+    <button {{action "startQuiz" channel}}>Choose</button> {{channel.title}}
+  </li>
+{{/each}}
+</ul>
