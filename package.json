@@ -2,7 +2,7 @@
   "name": "trivia-radio4000",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for trivia-radio4000 goes here",
+  "description": "A quiz game for Radio4000",
   "license": "MIT",
   "author": "",
   "directories": {
