@@ -1,5 +1,4 @@
 import DS from 'ember-data';
-import firebase from 'firebase';
 
 const {Model, attr, belongsTo} = DS;
 
