@@ -3,7 +3,7 @@
 <ul>
 {{#each model as |channel|}}
   <li>
-    <button {{action "startQuiz" channel}}>Choose</button> {{channel.title}}
+    <button {{action "startQuiz" channel}}>{{channel.title}}</button>
   </li>
 {{/each}}
 </ul>
