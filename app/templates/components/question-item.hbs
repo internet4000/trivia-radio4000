@@ -1,0 +1,11 @@
+<p>Is it…</p>
+
+<menu>
+  {{#each answers as |answer|}}
+    <button {{action "selectAnswer" answer}}>
+      {{answer}}
+    </button>
+  {{/each}}
+</menu>
+
+{{yield}}

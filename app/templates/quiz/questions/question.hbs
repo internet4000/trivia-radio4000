@@ -1,0 +1,14 @@
+<h2>Which track is this?</h2>
+
+{{question-item
+  track=model.question
+  answers=model.answers
+  onAnswer=(route-action "checkAnswer")
+}}
+
+<details>
+  <summary>show player</summary>
+  <radio4000-player track-id={{model.question.id}} autoplay="true"></radio4000-player>
+</details>
+
+{{outlet}}
