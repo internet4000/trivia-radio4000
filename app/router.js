@@ -11,9 +11,10 @@ Router.map(function() {
   this.route('quiz')
   this.route('quiz', {path: 'quiz/:id'}, function() {
     this.route('players')
+    this.route('channels');
     this.route('questions', function() {
       this.route('question', {path: ':index'})
-    })
+    });
   })
 })
 

@@ -5,7 +5,7 @@ export default Route.extend({
   async model() {
     let quiz = this.modelFor('quiz')
     let tracks = await quiz.get('channel.tracks')
-    let questions = pickRandom(tracks, 10)
+    let questions = pickRandom(tracks, quiz.get('questionNumber'))
     return questions
   }
 })

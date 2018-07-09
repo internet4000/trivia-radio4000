@@ -9,9 +9,21 @@
     {{/if}}
   </p>
 {{/if}}
+
 {{#if model.channel.id}}
-  <p>Radio4000 {{link-to 'channel' 'quiz.index'}}: <strong>{{model.channel.title}}</strong>.</p>
+  <p>Radio4000 {{link-to 'channel' 'quiz.channels'}}: <strong>{{model.channel.title}}</strong>.</p>
+{{else}}
+  <p>
+    To continue, {{link-to 'select a radio channel' 'quiz.channels'}}.
+    Questions will be based on its tracks.
+  </p>
 {{/if}}
 
 
 {{outlet}}
+
+{{#if model.channel.id}}
+  <button onclick={{route-action "startQuiz"}}>
+    Start quiz!
+  </button>
+{{/if}}

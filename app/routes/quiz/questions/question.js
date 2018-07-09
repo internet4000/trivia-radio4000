@@ -13,6 +13,7 @@ function getRandomAnswer(tracks, excludeId) {
 
 export default Route.extend({
   async model({index}) {
+    let quiz = this.modelFor('quiz')
     let questions = this.modelFor('quiz.questions')
     this.questionIndex = index - 1
     let question = questions[this.questionIndex]
