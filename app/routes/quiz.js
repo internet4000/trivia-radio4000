@@ -1,14 +1,17 @@
-import Route from '@ember/routing/route';
+import Route from '@ember/routing/route'
 
 export default Route.extend({
-  model({id}) {
-    let store = this.get('store')
-    let quiz = store.peekRecord('quiz', id)
+  async model({id}) {
+    let quiz = this.store.peekRecord('quiz', id)
 
     if (!quiz) {
-      quiz = store.createRecord('quiz', { id })
+      quiz = this.store.createRecord('quiz', {id})
     }
+
+    // hardcoded channel to speed up development
+    // let channel = await this.store.findRecord('channel', '-J_Mp1OhyLuo4tJozPAV')
+    // quiz.set('channel', channel)
 
     return quiz
   }
-});
+})

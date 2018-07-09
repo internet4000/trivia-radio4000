@@ -11,6 +11,11 @@ export default Route.extend({
       })
     })
   },
+  afterModel({quiz}) {
+    if (quiz.get('channel.id')) {
+      this.transitionTo('quiz.players')
+    }
+  },
   actions: {
     setChannel(channel) {
       let quiz = this.modelFor('quiz')
