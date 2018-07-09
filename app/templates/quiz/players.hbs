@@ -1,12 +1,20 @@
-{{add-player onSubmit=(route-action 'addPlayer')}}
+{{#unless model.players}}
+  <p>Add at least one player:</p>
+{{/unless}}
+
+{{add-player
+  numberOfPlayers=model.players.length
+  onSubmit=(route-action 'addPlayer')
+}}
 
 {{#if model.players}}
   <ol>
     {{#each model.players as |player index|}}
       <li>
         {{edit-player
-            player=player
-            removePlayer=(route-action 'removePlayer') }}
+          player=player
+          removePlayer=(route-action 'removePlayer')
+        }}
       </li>
     {{/each}}
   </ol>
@@ -14,9 +22,6 @@
   <button onclick={{route-action "continue"}}>
     Start quiz!
   </button>
-
-  {{else}}
-  <p>Add at least one player</p>
 {{/if}}
 
 {{outlet}}
