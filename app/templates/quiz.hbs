@@ -1,11 +1,17 @@
 {{#if model.id}}
-  <p>Quiz: <strong>{{model.id}}</strong>.</p>
+  <p>
+    {{link-to 'Quiz' 'quiz.index'}}: <strong>{{model.id}}</strong>
+    {{#if model.players}}
+      —
+      <span>
+        <strong>{{model.players.length}}</strong> {{link-to 'players' 'quiz.players'}}
+      </span>
+    {{/if}}
+  </p>
 {{/if}}
 {{#if model.channel.id}}
   <p>Radio4000 channel <strong>{{model.channel.title}}</strong>.</p>
 {{/if}}
-{{#if model.playersn}}
-  <p>Players: <strong>{{model.players.length}}</strong>.</p>
-{{/if}}
+
 
 {{outlet}}
