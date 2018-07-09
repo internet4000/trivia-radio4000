@@ -9,8 +9,8 @@ export default Route.extend({
     }
 
     // hardcoded channel to speed up development
-    // let channel = await this.store.findRecord('channel', '-J_Mp1OhyLuo4tJozPAV')
-    // quiz.set('channel', channel)
+    let channel = await this.store.findRecord('channel', '-J_Mp1OhyLuo4tJozPAV')
+    quiz.set('channel', channel)
 
     return quiz
   }

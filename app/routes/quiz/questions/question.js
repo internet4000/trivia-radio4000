@@ -14,7 +14,8 @@ function getRandomAnswer(tracks, excludeId) {
 export default Route.extend({
   async model({index}) {
     let questions = this.modelFor('quiz.questions')
-    let question = questions[index - 1]
+    this.questionIndex = index - 1
+    let question = questions[this.questionIndex]
 
     let tracks = await this.modelFor('quiz').get('channel.tracks')
     console.log(tracks.get('length'))
@@ -33,9 +34,15 @@ export default Route.extend({
   },
   actions: {
     checkAnswer(answer) {
+      console.log(this.questionIndex)
       let question = this.currentModel.question
       let isCorrect = answer === question.title
-      alert(isCorrect ? 'YAY!' : 'NAY…')
+      if (isCorrect) {
+        alert('YAY')
+        this.transitionTo('quiz.questions.question', this.questionIndex + 2)
+      } else {
+        alert('NAY…')
+      }
     }
   }
 });
