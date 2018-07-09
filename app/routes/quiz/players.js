@@ -2,12 +2,14 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   model() {
-    return this.modelFor('quiz.id')
+    return this.modelFor('quiz')
+  },
   },
   actions: {
     // create player model, with a player name
-    addPlayer (name) {
-      let quiz = this.modelFor('quiz.id')
+    addPlayer(name) {
+      let quiz = this.modelFor('quiz')
+
       // create player
       let player = this.get('store').createRecord('player', {
         name,
