@@ -14,6 +14,10 @@ export default Route.extend({
       let player = this.store.createRecord('player', {name, quiz})
       quiz.get('players').pushObject(player)
     },
+    removePlayer(player) {
+      let quiz = this.modelFor('quiz')
+      quiz.get('players').removeObject(player)
+    },
     continue() {
       this.transitionTo('quiz.questions.question', 1)
     }

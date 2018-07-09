@@ -4,7 +4,9 @@
   <ol>
     {{#each model.players as |player index|}}
       <li>
-        {{input value=player.name}}
+        {{edit-player
+            player=player
+            removePlayer=(route-action 'removePlayer') }}
       </li>
     {{/each}}
   </ol>
