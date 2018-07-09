@@ -1,4 +1,4 @@
-import Route from '@ember/routing/route';
+import Route from '@ember/routing/route'
 
 export default Route.extend({
   model() {
@@ -11,14 +11,14 @@ export default Route.extend({
       let quiz = this.modelFor('quiz')
 
       // create player
-      let player = this.get('store').createRecord('player', {
+      let player = this.store.createRecord('player', {
         name,
         quiz
-      });
+      })
 
       // assign player to quiz
       return quiz.get('players')
         .then(players => players.addObject(player))
     }
   }
-});
+})

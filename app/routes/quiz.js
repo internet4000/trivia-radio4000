@@ -3,12 +3,12 @@ import Route from '@ember/routing/route';
 export default Route.extend({
   model({id}) {
     let store = this.get('store')
-    let model = store.peekRecord('quiz', id)
+    let quiz = store.peekRecord('quiz', id)
 
-    if (!model) {
-      return store.createRecord('quiz', { id })
+    if (!quiz) {
+      quiz = store.createRecord('quiz', { id })
     }
 
-    return model
+    return quiz
   }
 });
