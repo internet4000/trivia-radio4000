@@ -19,14 +19,12 @@ export default Route.extend({
     let question = questions[this.questionIndex]
 
     let tracks = await this.modelFor('quiz').get('channel.tracks')
-    console.log(tracks.get('length'))
 
     let answers = [
       getRandomAnswer(tracks, question.id).title,
       getRandomAnswer(tracks, question.id).title,
       question.title
     ]
-    console.log(question)
 
     return hash({
       question,
@@ -35,7 +33,6 @@ export default Route.extend({
   },
   actions: {
     checkAnswer(answer) {
-      console.log(this.questionIndex)
       let question = this.currentModel.question
       let isCorrect = answer === question.title
       if (isCorrect) {

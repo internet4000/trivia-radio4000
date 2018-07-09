@@ -4,17 +4,16 @@ export default Route.extend({
   async model({id}) {
     if (!id) this.transitionTo('new-game')
 
-    let store = this.store;
+    let store = this.store
     let quiz = store.peekRecord('quiz', id)
-
 
     if (!quiz) {
       quiz = store.createRecord('quiz', {id})
     }
 
-    let players = quiz.get('players');
+    let players = quiz.get('players')
 
-    if(!players.length) {
+    if (!players.length) {
       let player = store.createRecord('player', {
         name: 'Player 1'
       })
