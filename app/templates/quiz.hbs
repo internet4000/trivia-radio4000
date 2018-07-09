@@ -1,5 +1,11 @@
+{{#if model.id}}
+  <p>Quiz: <strong>{{model.id}}</strong>.</p>
+{{/if}}
 {{#if model.channel.id}}
-  <p>Quizzing <strong>{{model.channel.title}}</strong>.</p>
+  <p>Radio4000 channel <strong>{{model.channel.title}}</strong>.</p>
+{{/if}}
+{{#if model.playersn}}
+  <p>Players: <strong>{{model.players.length}}</strong>.</p>
 {{/if}}
 
 {{outlet}}

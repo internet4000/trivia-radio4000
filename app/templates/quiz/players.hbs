@@ -1,9 +1,3 @@
-
-{{#if model.players}}
-{{else}}
-  <p>Add the first player:</p>
-{{/if}}
-
 {{add-player onSubmit=(route-action 'addPlayer')}}
 
 {{#if model.players}}
@@ -16,8 +10,11 @@
   </ol>
 
   <button onclick={{route-action "continue"}}>
-    Continue
+    Start quiz!
   </button>
+
+  {{else}}
+  <p>Add at least one player</p>
 {{/if}}
 
 {{outlet}}
