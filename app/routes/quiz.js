@@ -2,6 +2,8 @@ import Route from '@ember/routing/route'
 
 export default Route.extend({
   async model({id}) {
+    if (!id) this.transitionTo('new-game')
+
     let quiz = this.store.peekRecord('quiz', id)
 
     if (!quiz) {
