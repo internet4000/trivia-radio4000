@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('quiz', {path: 'quiz/:id'}, function() {
     this.route('players')
   })
+  this.route('start');
 })
 
 export default Router

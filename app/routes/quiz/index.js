@@ -13,7 +13,6 @@ export default Route.extend({
   },
   actions: {
     setChannel(channel) {
-      console.log(channel.title)
       this.modelFor('quiz').set('channel', channel)
     }
   }

@@ -6,8 +6,7 @@ function randomText(length = 4) {
 }
 
 export default Route.extend({
-  afterModel() {
-
-    this.replaceWith('quiz.id', randomText())
+  beforeModel() {
+    this.replaceWith('quiz', randomText())
   }
 });
