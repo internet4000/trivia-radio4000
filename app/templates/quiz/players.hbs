@@ -1,6 +1,6 @@
 <p>Add players:</p>
 
-{{add-player add=(route-action 'addPlayer')}}
+{{add-player onSubmit=(route-action 'addPlayer')}}
 
 <p>Current players:</p>
 {{#if model.quiz.players}}

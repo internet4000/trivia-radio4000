@@ -1,4 +1,6 @@
-{{input value=name}}
+<form onsubmit={{action "add"}}>
+  {{input value=name placeholder="Enter name…"}}
+  <button type="submit">Add player</button>
+</form>
 
-<button {{action 'add'}}>Add player</button>
 {{yield}}
