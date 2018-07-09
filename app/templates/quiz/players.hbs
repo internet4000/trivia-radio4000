@@ -1,18 +1,23 @@
-{{#if model.quiz.players}}
+
+{{#if model.players}}
 {{else}}
   <p>Add the first player:</p>
 {{/if}}
 
 {{add-player onSubmit=(route-action 'addPlayer')}}
 
-<h2>Players</h2>
-
-{{#if model.quiz.players}}
-  <ul>
-    {{#each model.quiz.players as |player index|}}
-      <li>Player: {{index}} {{player.name}}</li>
+{{#if model.players}}
+  <ol>
+    {{#each model.players as |player index|}}
+      <li>
+        {{input value=player.name}}
+      </li>
     {{/each}}
-  </ul>
+  </ol>
+
+  <button onclick={{route-action "continue"}}>
+    Continue
+  </button>
 {{/if}}
 
 {{outlet}}

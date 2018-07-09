@@ -11,16 +11,11 @@ export default Route.extend({
     // create player model, with a player name
     addPlayer(name) {
       let quiz = this.modelFor('quiz')
-
-      // create player
-      let player = this.store.createRecord('player', {
-        name,
-        quiz
-      })
-
-      // assign player to quiz
-      return quiz.get('players')
-        .then(players => players.addObject(player))
+      let player = this.store.createRecord('player', {name, quiz})
+      quiz.get('players').pushObject(player)
+    },
+    continue() {
+      this.transitionTo('quiz.questions.question', 1)
     }
   }
 })
