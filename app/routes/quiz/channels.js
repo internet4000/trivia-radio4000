@@ -13,7 +13,7 @@ export default Route.extend({
       let quiz = this.modelFor('quiz')
       quiz.set('channel', channel)
       if (quiz.get('channel.id')) {
-        this.transitionTo('quiz.players')
+        this.transitionTo('quiz.index')
       }
     }
   }
