@@ -5,6 +5,7 @@ export default Component.extend({
     add(event) {
       event.preventDefault()
       this.get('onSubmit')(this.get('name'))
+      this.set('name', '')
     }
   }
 })
