@@ -1,4 +1,9 @@
 {{#unless model.quiz.channel}}
+  <p>
+    <strong>To continue, select a radio channel.</strong><br>
+    Questions will be based on its tracks.
+  </p>
+
   {{channel-chooser
     channels=model.channels
     onSelect=(route-action "setChannel")

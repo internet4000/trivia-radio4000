@@ -1,5 +1,5 @@
-Welcome to quiz <strong>{{model.id}}</strong>!
-
-<p>Selected channel: {{model.channel.title}}</p>
+{{#if model.channel.id}}
+  <p><strong>{{model.channel.title}}</strong> it is.</p>
+{{/if}}
 
 {{outlet}}

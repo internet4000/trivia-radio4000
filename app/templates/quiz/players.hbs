@@ -1,16 +1,18 @@
-<p>Add players:</p>
+{{#if model.quiz.players}}
+{{else}}
+  <p>Add the first player:</p>
+{{/if}}
 
 {{add-player onSubmit=(route-action 'addPlayer')}}
 
-<p>Current players:</p>
+<h2>Players</h2>
+
 {{#if model.quiz.players}}
   <ul>
     {{#each model.quiz.players as |player index|}}
       <li>Player: {{index}} {{player.name}}</li>
     {{/each}}
   </ul>
-{{else}}
-  There are no player, add one to start!
 {{/if}}
 
 {{outlet}}
