@@ -1,14 +1,12 @@
-import EmberRouter from '@ember/routing/router';
-import config from './config/environment';
+import EmberRouter from '@ember/routing/router'
+import config from './config/environment'
 
 const Router = EmberRouter.extend({
   location: config.locationType,
   rootURL: config.rootURL
-});
+})
 
 Router.map(function() {
-  this.route('start', function() {});
-
   this.route('quiz', function() {
     this.route('id', {path: ':id'}, function() {
       this.route('players')
@@ -16,4 +14,4 @@ Router.map(function() {
   });
 });
 
-export default Router;
+export default Router
