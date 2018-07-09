@@ -5,10 +5,10 @@ export default Route.extend({
     let store = this.get('store')
     let model = store.peekRecord('quiz', id)
 
-    if(!model) {
+    if (!model) {
       return store.createRecord('quiz', { id })
-    } else {
-      return model
     }
+
+    return model
   }
 });

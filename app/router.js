@@ -7,11 +7,9 @@ const Router = EmberRouter.extend({
 })
 
 Router.map(function() {
-  this.route('quiz', function() {
-    this.route('id', {path: ':id'}, function() {
-      this.route('players')
-    });
-  });
-});
+  this.route('quiz', {path: 'quiz/:id'}, function() {
+    this.route('players')
+  })
+})
 
 export default Router

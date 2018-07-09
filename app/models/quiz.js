@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-const {belongsTo, attr, hasMany} = DS;
+const {belongsTo, hasMany} = DS;
 
 export default DS.Model.extend({
   channel: belongsTo(),

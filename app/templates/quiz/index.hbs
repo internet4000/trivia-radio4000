@@ -1,0 +1,8 @@
+{{#unless model.quiz.channel}}
+  {{channel-chooser
+    channels=model.channels
+    onSelect=(route-action "setChannel")
+  }}
+{{/unless}}
+
+{{outlet}}
