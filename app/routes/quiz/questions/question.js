@@ -1,6 +1,6 @@
 import Route from '@ember/routing/route';
 import {hash} from 'rsvp'
-import {getRandomIndex} from 'trivia-radio4000/utils/random-helpers'
+import {getRandomIndex, shuffleArray} from 'trivia-radio4000/utils/random-helpers'
 
 // Returns a random track that is not the question.
 function getRandomAnswer(tracks, excludeId) {
@@ -20,11 +20,11 @@ export default Route.extend({
 
     let tracks = await this.modelFor('quiz').get('channel.tracks')
 
-    let answers = [
+    let answers = shuffleArray([
       getRandomAnswer(tracks, question.id).title,
       getRandomAnswer(tracks, question.id).title,
       question.title
-    ]
+    ])
 
     return hash({
       question,
