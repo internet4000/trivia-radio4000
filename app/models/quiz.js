@@ -1,10 +1,15 @@
 import DS from 'ember-data'
 import {computed} from '@ember/object'
-const {attr, belongsTo, hasMany} = DS
+const {belongsTo, hasMany} = DS
 
 export default DS.Model.extend({
   channel: belongsTo('channel'),
-  players: [],
+
+  init() {
+    this._super(...arguments)
+    this.players = []
+  },
+
   usedTracks: hasMany('tracks'),
   minimumQuestions: '1',
   maximumQuestions: computed('channel.tracks.length', {
