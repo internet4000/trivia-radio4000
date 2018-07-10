@@ -28,7 +28,10 @@ export default Route.extend({
   },
   actions: {
     startQuiz() {
-      this.transitionTo('quiz.questions.question', 1)
+      if(this.currentModel.channel) {
+        this.transitionTo('quiz.questions.question', 1)
+      }
+      this.transitionTo('quiz.channels')
     }
   }
 })

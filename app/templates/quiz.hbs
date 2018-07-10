@@ -8,26 +8,19 @@
       </span>
     {{/if}}
 
+    <button onclick={{route-action "startQuiz"}}>
+      {{if model.tracks.length 'Continue quiz' 'Start quiz'}}!
+    </button>
+
     —
     <span>
       {{link-to 'settings' 'quiz.settings'}}
     </span>
-
-    {{#if model.channel.id}}
-      <button onclick={{route-action "startQuiz"}}>
-        Continue quiz!
-      </button>
-    {{/if}}
   </p>
 {{/if}}
 
 {{#if model.channel.id}}
-  <p>Radio4000 {{link-to 'channel' 'quiz.channels'}}: <strong>{{model.channel.title}}</strong>.</p>
-{{else}}
-  <p>
-    To continue, {{link-to 'select a radio channel' 'quiz.channels'}}.
-    Questions will be based on its tracks.
-  </p>
+  <p>Playing Radio4000 {{link-to 'channel' 'quiz.channels'}} <strong>{{model.channel.title}}</strong>.</p>
 {{/if}}
 
 {{outlet}}

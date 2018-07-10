@@ -1,5 +1,13 @@
 {{outlet}}
 
+{{#if model.quiz.channel}}
+{{else}}
+  <p>
+    To play this game you need to select which Radio4000 channel will provide the music!<br>
+    All questions asked, will be based on its tracks.
+  </p>
+{{/if}}
+
 {{channel-chooser
     channels=model.channels
     onSelect=(route-action "setChannel")}}
