@@ -15,6 +15,7 @@ Router.map(function() {
     this.route('questions', function() {
       this.route('question', {path: ':index'})
     });
+    this.route('settings');
   })
 })
 

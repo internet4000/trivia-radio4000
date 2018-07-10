@@ -1,0 +1,16 @@
+Total questions:
+{{input
+    type="number"
+    class="Input Input--tiny"
+    value=quiz.totalQuestions
+    min="1"
+    max=channel.tracks.length}}
+on
+{{input
+    type="number"
+    class="Input Input--tiny"
+    disabled=true
+    value=channel.tracks.length}}
+tracks.
+
+{{yield}}

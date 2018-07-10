@@ -7,6 +7,17 @@
         <strong>{{model.players.length}}</strong> {{link-to 'players' 'quiz.players'}}
       </span>
     {{/if}}
+
+    —
+    <span>
+      {{link-to 'settings' 'quiz.settings'}}
+    </span>
+
+    {{#if model.channel.id}}
+      <button onclick={{route-action "startQuiz"}}>
+        Continue quiz!
+      </button>
+    {{/if}}
   </p>
 {{/if}}
 
