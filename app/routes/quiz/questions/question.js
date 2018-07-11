@@ -13,12 +13,12 @@ function getRandomAnswer(tracks, excludeId) {
 
 export default Route.extend({
   async model({index}) {
-    let quiz = this.modelFor('quiz')
-    let question = quiz.get('questions')[index]
-    let tracks = await quiz.get('channel.tracks')
-
     index = index - 1
     this.questionIndex = index
+
+    let quiz = this.modelFor('quiz')
+    let question = this.modelFor('quiz.questions')[index]
+    let tracks = await quiz.get('channel.tracks')
 
     let answers = shuffleArray([
       getRandomAnswer(tracks, question.id).title,

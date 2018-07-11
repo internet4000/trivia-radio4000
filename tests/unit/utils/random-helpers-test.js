@@ -1,7 +1,7 @@
 import randomHelpers from 'trivia-radio4000/utils/random-helpers';
 import { module, test } from 'qunit';
 
-module('Unit | Utility | random-helpers', function(hooks) {
+module('Unit | Utility | random-helpers', function() {
 
   // Replace this with your real tests.
   test('it works', function(assert) {
