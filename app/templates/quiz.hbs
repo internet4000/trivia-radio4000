@@ -1,17 +1,18 @@
 {{#if model.id}}
   <p>
     {{link-to 'Quiz' 'quiz.index'}}: <strong>{{model.id}}</strong>
+
+    {{#if model.channel.tracks}}
+      —
+      {{link-to 'channel' 'quiz.channels'}} <strong>{{model.channel.title}}</strong>
+    {{/if}}
+
     {{#if model.players}}
       —
       <span>
         <strong>{{model.players.length}}</strong> {{link-to 'players' 'quiz.players'}}
       </span>
     {{/if}}
-
-    <button onclick={{route-action "startQuiz"}}>
-      {{if model.tracks.length 'Continue quiz' 'Start quiz'}}!
-    </button>
-
     —
     <span>
       {{link-to 'settings' 'quiz.settings'}}
@@ -19,8 +20,5 @@
   </p>
 {{/if}}
 
-{{#if model.channel.id}}
-  <p>Playing Radio4000 {{link-to 'channel' 'quiz.channels'}} <strong>{{model.channel.title}}</strong>.</p>
-{{/if}}
 
 {{outlet}}

@@ -1,1 +1,9 @@
+<button onclick={{route-action "startQuiz"}}>
+  {{#if model.channel.tracks}}
+    Start quiz
+  {{else}}
+    Choose radio
+  {{/if}}
+</button>
+
 {{outlet}}
