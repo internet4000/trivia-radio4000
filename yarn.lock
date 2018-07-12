@@ -2190,6 +2190,14 @@ ember-ajax@^3.0.0:
   dependencies:
     ember-cli-babel "^6.6.0"
 
+ember-angle-bracket-invocation-polyfill@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/ember-angle-bracket-invocation-polyfill/-/ember-angle-bracket-invocation-polyfill-1.1.6.tgz#17eee73bdf7b42d196e476d3fc4532df3d3c4a6c"
+  dependencies:
+    ember-cli-babel "^6.6.0"
+    ember-cli-version-checker "^2.1.2"
+    ember-compatibility-helpers "^1.0.0"
+
 ember-awesome-macros@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ember-awesome-macros/-/ember-awesome-macros-2.0.0.tgz#d41adbbf3ce0729f7545cc63da7fea7e1a03a775"

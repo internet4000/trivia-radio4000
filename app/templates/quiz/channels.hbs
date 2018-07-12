@@ -2,8 +2,9 @@
   Start the quiz by selecting a Radio4000 channel to provide the questions and music:
 </p>
 
-{{channel-chooser
-    channels=model.channels
-    onSelect=(route-action "setChannel")}}
+<ChannelChooser
+  @channels={{model.channels}}
+  @onSelect={{route-action "setChannel"}}>
+</ChannelChooser>
 
 {{outlet}}
