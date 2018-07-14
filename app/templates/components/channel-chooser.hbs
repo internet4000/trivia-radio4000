@@ -1,8 +1,8 @@
 <ul>
-  {{#each channels as |channel|}}
     <li>
       <button {{action "select" channel}}>{{channel.title}}</button>
       {{yield channel}}
     </li>
+  {{#each channelsWithTracks as |channel|}}
   {{/each}}
 </ul>
