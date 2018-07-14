@@ -35,13 +35,6 @@ export default Model.extend({
   // Relationships.
   images: hasMany('image', {async: true}),
   tracks: hasMany('track', {async: true}),
-  favoriteChannels: hasMany('channel', {inverse: null, async: true}),
-  // channelPublic: belongsTo('channelPublic', {async: true}),
-
-  // Meta data.
-  totalFavorites: computed('favoriteChannels', function() {
-    return this.hasMany('favoriteChannels').ids().length
-  }),
 
   totalTracks: computed('tracks.[]', function() {
     return this.hasMany('tracks').ids().length
