@@ -1,9 +1,9 @@
 import DS from 'ember-data'
 import {computed} from '@ember/object'
-const {belongsTo, hasMany} = DS
+const {hasMany} = DS
 
 export default DS.Model.extend({
-  channel: belongsTo('channel'),
+  channel: DS.attr(),
 
   init() {
     this._super(...arguments)
