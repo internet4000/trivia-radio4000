@@ -76,6 +76,8 @@ menu .active {
 }
 
 .Input--tiny {
+  font-size: 1em;
+  text-align: center;
   max-width: 3rem;
 }
 
