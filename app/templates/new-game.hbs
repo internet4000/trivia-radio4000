@@ -1,1 +1,34 @@
+<center>
+  {{#if channel}}
+    <menu>
+      <button onclick={{action "startQuiz"}}>
+        Create quiz with
+        <em>{{channel.title}}</em> <small>({{channel.slug}})</small>
+      </button>
+      <button onclick={{action "changeRadio"}}>
+        Change radio
+      </button>
+    </menu>
+  {{/if}}
+
+  {{#if model.quiz.channel}}
+    <p>
+      {{questions-number-chooser quiz=model.quiz}}
+    </p>
+  {{/if}}
+
+  <menu class="FixedUI FixedUI--bottom">
+    {{link-to "Exit" "index"}}
+  </menu>
+</center>
+
+{{#unless channel}}
+  <p>Select a Radio4000 channel to provide the questions and music:</p>
+
+  <ChannelChooser
+    @channels={{model.channels}}
+    @onSelect={{action "setChannel"}}>
+  </ChannelChooser>
+{{/unless}}
+
 {{outlet}}

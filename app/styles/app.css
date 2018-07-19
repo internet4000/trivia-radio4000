@@ -50,6 +50,7 @@ menu {
   /* align-items: center; */
   border-radius: 4px;
   background: var(--color-blue);
+  min-width: 5em;
 }
 
 menu > * {
@@ -81,3 +82,11 @@ menu .active {
   max-width: 3rem;
 }
 
+
+.FixedUI {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+}
