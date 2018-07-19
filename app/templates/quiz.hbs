@@ -1,24 +1,16 @@
-{{#if model.id}}
-  <p>
-    {{link-to 'Quiz' 'quiz.index'}}: <strong>{{model.id}}</strong>
-
-    {{#if model.channel.tracks}}
-      —
-      {{link-to 'channel' 'quiz.channels'}} <strong>{{model.channel.title}}</strong>
-    {{/if}}
-
-    {{#if model.players}}
-      —
-      <span>
-        <strong>{{model.players.length}}</strong> {{link-to 'players' 'quiz.players'}}
-      </span>
-    {{/if}}
-    —
-    <span>
-      {{link-to 'settings' 'quiz.settings'}}
-    </span>
-  </p>
-{{/if}}
-
+<p>
+  <small>
+    {{#link-to 'quiz.index'}}Quiz {{model.id}}{{/link-to}}
+  </small>
+</p>
 
 {{outlet}}
+
+{{!--
+  {{#if model.players}}
+    {{#link-to "quiz.players" title="Change players"}}
+      {{model.players.length}} {{playerLabel}}
+    {{/link-to}}
+  {{/if}}
+  --}}
+
