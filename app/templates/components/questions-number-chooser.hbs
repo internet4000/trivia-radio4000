@@ -1,16 +1,11 @@
-Total questions:
+Ask me
 {{input
-    type="number"
-    class="Input Input--tiny"
-    value=quiz.totalQuestions
-    min="1"
-    max=channel.tracks.length}}
-on
-{{input
-    type="number"
-    class="Input Input--tiny"
-    disabled=true
-    value=channel.tracks.length}}
-tracks.
+  type="number"
+  class="Input Input--tiny"
+  value=quiz.totalQuestions
+  min="1"
+  max=quiz.maximumQuestions}}
+  {{pluralize quiz.totalQuestions "question" without-count=true}}
+  out of {{quiz.channel.tracks.length}} possible.
 
 {{yield}}

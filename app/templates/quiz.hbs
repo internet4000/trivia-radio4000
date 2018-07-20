@@ -1,16 +1,25 @@
-<p>
-  <small>
-    {{#link-to 'quiz.index'}}Quiz {{model.id}}{{/link-to}}
-  </small>
-</p>
+<center>
+  <p>
+    <small>
+      {{#link-to 'quiz.index'}}
+        Radio4000 Trivia<br>{{if model.channel model.channel.title model.id}}
+      {{/link-to}}
+    </small>
+  </p>
+</center>
 
 {{outlet}}
 
 {{!--
-  {{#if model.players}}
-    {{#link-to "quiz.players" title="Change players"}}
-      {{model.players.length}} {{playerLabel}}
-    {{/link-to}}
-  {{/if}}
-  --}}
+{{#if model.players}}
+  {{#link-to "quiz.players" title="Change players"}}
+    {{model.players.length}} {{playerLabel}}
+  {{/link-to}}
+{{/if}}
+--}}
 
+<center>
+  <menu>
+    {{link-to "Leave quiz" "index"}}
+  </menu>
+</center>

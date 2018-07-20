@@ -1,9 +1,11 @@
 import DS from 'ember-data'
 import {computed} from '@ember/object'
-const {belongsTo, hasMany} = DS
+import {conditional} from 'ember-awesome-macros'
+
+const {attr, hasMany} = DS
 
 export default DS.Model.extend({
-  channel: belongsTo('channel'),
+  channel: attr(),
 
   init() {
     this._super(...arguments)
@@ -11,27 +13,20 @@ export default DS.Model.extend({
   },
 
   usedTracks: hasMany('tracks'),
+
   minimumQuestions: '1',
-  maximumQuestions: computed('channel.tracks.length', {
-    get(key, value) {
-      let max = this.channel.get('tracks.length');
-      if(!max) {
-        return 0
-      }
-      return max
-    }
-  }),
-  totalQuestions: computed('channel.tracks.length', {
+  maximumQuestions: conditional('channel.totalTracks', 'channel.totalTracks', 0),
+  totalQuestions: computed('channel.totalTracks', {
     get(key, value) {
       let max = this.maximumQuestions
-      if(!value || typeof value != 'number') {
+      if (!value || typeof value != 'number') {
         if(max) {
           return max
         }
         return this.minimumQuestions
       }
 
-      if(value <= 0 || value > max || value < this.minimumQuestions) {
+      if (value <= 0 || value > max || value < this.minimumQuestions) {
         return max
       }
       return value
@@ -39,11 +34,11 @@ export default DS.Model.extend({
     set(key, value) {
       let max = this.maximumQuestions
 
-      if(!max) {
+      if (!max) {
         return this.minimumQuestions;
       }
 
-      if(value >= max) {
+      if (value >= max) {
         return max
       }
 

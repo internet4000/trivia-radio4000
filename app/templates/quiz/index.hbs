@@ -1,18 +1,12 @@
-<menu>
-  {{#if model.channel.tracks}}
+<center>
+  <menu>
     <button onclick={{route-action "startQuiz"}}>
-      Start quiz with <em>{{model.channel.title}}</em>
+      Start quiz
     </button>
-  {{/if}}
-
-  {{#if model.channel}}
-    {{link-to "Change radio" "quiz.channels"}}
+    {{!--
     {{link-to "Settings" "quiz.settings"}}
-  {{else}}
-    {{link-to "Choose radio" "quiz.channels" title="Select a Radio4000 channel to get started"}}
-  {{/if}}
-
-  {{#link-to "index"}}Quit{{/link-to}}
-</menu>
+    --}}
+  </menu>
+</center>
 
 {{outlet}}
