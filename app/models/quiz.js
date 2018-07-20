@@ -1,6 +1,5 @@
 import DS from 'ember-data'
 import {computed} from '@ember/object'
-import {alias} from '@ember/object/computed'
 import {conditional} from 'ember-awesome-macros'
 
 const {attr, hasMany} = DS
