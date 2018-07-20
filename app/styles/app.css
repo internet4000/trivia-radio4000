@@ -38,6 +38,7 @@ button img {
 }
 
 menu {
+  max-width: 40rem;
   border-style: solid;
   border-width: 1px;
   border-color: rgba(0,0,0,0.655555) rgba(0,0,0,0.6) rgba(0,0,0,0.7);

@@ -1,4 +1,8 @@
 <center>
+  <menu>
+    {{link-to "Go back" "index"}}
+  </menu>
+
   {{#if channel}}
     <menu>
       <button onclick={{action "startQuiz"}}>
@@ -9,22 +13,15 @@
         Change radio
       </button>
     </menu>
-  {{/if}}
-
-  {{#if model.quiz.channel}}
     <p>
       {{questions-number-chooser quiz=model.quiz}}
     </p>
+  {{else}}
+    <p>Select a Radio4000 channel to provide the questions and music:</p>
   {{/if}}
-
-  <menu class="FixedUI FixedUI--bottom">
-    {{link-to "Exit" "index"}}
-  </menu>
 </center>
 
 {{#unless channel}}
-  <p>Select a Radio4000 channel to provide the questions and music:</p>
-
   <ChannelChooser
     @channels={{model.channels}}
     @onSelect={{action "setChannel"}}>
