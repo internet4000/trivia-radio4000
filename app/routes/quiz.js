@@ -14,7 +14,6 @@ export default Route.extend({
   afterModel(quiz) {
     let players = quiz.get('players')
     if (!players.length) {
-      console.log('adding one player')
       let player = this.store.createRecord('player', {
         name: 'Player 1'
       })

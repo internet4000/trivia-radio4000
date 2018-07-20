@@ -8,10 +8,14 @@ module('Integration | Helper | cloudinary-src', function(hooks) {
 
   // Replace this with your real tests.
   test('it renders', async function(assert) {
-    this.set('inputValue', '1234');
+    const imageId = '1234'
+    this.set('inputValue', imageId)
 
     await render(hbs`{{cloudinary-src inputValue}}`);
 
-    assert.equal(this.element.textContent.trim(), '1234');
+    const result = this.element.textContent.trim()
+
+    assert.ok(result.includes('https://res.cloudinary.com'))
+    assert.ok(result.includes(imageId))
   });
 });
