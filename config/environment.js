@@ -27,9 +27,9 @@ module.exports = function(environment) {
 
 		// Radio4000 staging project.
 		firebase: {
-			apiKey: 'AIzaSyDi6cxC167OWaliNMnZkE0BX1XP8ObwdnQ',
-			authDomain: 'radio4000-staging.firebaseapp.com',
-			databaseURL: 'https://radio4000-staging.firebaseio.com'
+			apiKey: 'AIzaSyAyeuzsaD353IhPbffzvP8EE88HNTwSTY0',
+			authDomain: 'radio4000.firebaseapp.com',
+			databaseURL: 'https://radio4000.firebaseio.com'
 		}
   };
 
