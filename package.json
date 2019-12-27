@@ -44,7 +44,7 @@
     "ember-route-action-helper": "^2.0.6",
     "ember-source": "~3.15.0",
     "ember-welcome-page": "^4.0.0",
-    "emberfire": "^2.0.10",
+    "emberfire": "^3.0.0-rc.6",
     "eslint-plugin-ember": "^7.7.1",
     "eslint-plugin-node": "^10.0.0",
     "loader.js": "^4.7.0",
