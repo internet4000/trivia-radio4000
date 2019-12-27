@@ -10,7 +10,7 @@ const {Model, attr, hasMany} = DS
 
 export default Model.extend({
   created: attr('number'),
-  updated: attr('timestamp'),
+  updated: attr('number'),
 
   title: attr('string'),
   slug: attr('string'),
