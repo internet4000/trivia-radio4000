@@ -1,9 +1,3 @@
-import Component from '@ember/component'
+import Component from '@glimmer/component'
 
-export default Component.extend({
-  actions: {
-    select(channel) {
-      this.onSelect(channel)
-    }
-  }
-})
+export default class ChannelChooserComponent extends Component {}

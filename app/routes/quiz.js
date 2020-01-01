@@ -19,10 +19,5 @@ export default Route.extend({
       })
       players.pushObject(player)
     }
-  },
-  actions: {
-    startQuiz() {
-      this.transitionTo('quiz.questions.question', 1)
-    }
   }
 })

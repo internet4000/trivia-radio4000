@@ -1,6 +1,6 @@
 <p>
   {{#each @channels as |channel|}}
-    <button {{action "select" channel}}>
+    <button {{on "click" (fn @onSelect channel)}}>
       {{channel.title}}
       {{!--
       {{#if channel.coverImage.src}}
