@@ -35,8 +35,5 @@ export default Model.extend({
   // Relationships.
   images: hasMany('image', {async: true}),
   tracks: hasMany('track', {async: true}),
-
-  totalTracks: computed('tracks.[]', function() {
-    return this.hasMany('tracks').ids().length
-  })
+  tracksCount: attr('number', {default: 0})
 })

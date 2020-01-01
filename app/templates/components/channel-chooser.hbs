@@ -1,10 +1,12 @@
 <p>
-  {{#each channelsWithTracks as |channel|}}
+  {{#each @channels as |channel|}}
     <button {{action "select" channel}}>
-      {{#if NOTYETchannel.coverImage.src}}
+      {{channel.title}}
+      {{!--
+      {{#if channel.coverImage.src}}
         <img src="{{cloudinary-src channel.coverImage.src}}" alt="{{channel.title}}">
       {{/if}}
-      {{channel.title}}
+      --}}
     </button>
     {{yield channel}}
   {{/each}}
