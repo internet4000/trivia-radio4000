@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'trivia-radio4000',
+    modulePrefix: 'quiz-radio4000',
     environment,
     rootURL: '/',
     locationType: 'auto',

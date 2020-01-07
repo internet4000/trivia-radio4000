@@ -1,6 +1,6 @@
 import Route from '@ember/routing/route';
 import {hash} from 'rsvp'
-import {getRandomIndex, shuffleArray} from 'trivia-radio4000/utils/random-helpers'
+import {getRandomIndex, shuffleArray} from 'quiz-radio4000/utils/random-helpers'
 
 // Returns a random track that is not the question.
 function getRandomAnswer(tracks, excludeId) {

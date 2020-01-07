@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route'
-import {pickRandom} from 'trivia-radio4000/utils/random-helpers'
+import {pickRandom} from 'quiz-radio4000/utils/random-helpers'
 
 export default Route.extend({
   async model() {
