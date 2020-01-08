@@ -1,22 +1,19 @@
-{{add-player
-  numberOfPlayers=model.players.length
-  onSubmit=(route-action 'addPlayer')
-}}
+<AddPlayer
+  numberOfPlayers={{@model.players.length}}
+  onSubmit={{route-action 'addPlayer'}} />
 
-{{#if model.players}}
+{{#if @model.players}}
   <ol>
-    {{#each model.players as |player index|}}
+    {{#each @model.players as |player|}}
       <li>
-        {{edit-player
-            player=player
-            removePlayer=(route-action 'removePlayer')
-        }}
+        <EditPlayer
+          player={{player}}
+          removePlayer={{route-action 'removePlayer'}}
+        ></EditPlayer>
       </li>
     {{/each}}
   </ol>
-
-  {{else}}
-
+{{else}}
   <p>If there is no player, does the game still exists?</p>
 {{/if}}
 

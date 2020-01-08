@@ -15,8 +15,9 @@ export default DS.Model.extend({
   usedTracks: hasMany('tracks'),
 
   minimumQuestions: '1',
-  maximumQuestions: conditional('channel.totalTracks', 'channel.totalTracks', 0),
-  totalQuestions: computed('channel.totalTracks', {
+  maximumQuestions: conditional('channel.tracksCount', 'channel.tracksCount', 0),
+
+  totalQuestions: computed('channel.tracksCount', {
     get(key, value) {
       let max = this.maximumQuestions
       if (!value || typeof value != 'number') {

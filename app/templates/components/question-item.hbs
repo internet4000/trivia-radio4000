@@ -1,6 +1,6 @@
 <menu>
-  {{#each answers as |answer|}}
-    <button {{action "selectAnswer" answer}}>
+  {{#each @answers as |answer|}}
+    <button type="button" {{on "click" (fn @onAnswer answer)}}>
       {{answer}}
     </button>
   {{/each}}

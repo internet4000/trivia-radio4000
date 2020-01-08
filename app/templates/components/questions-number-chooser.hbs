@@ -1,11 +1,14 @@
 Ask me
-{{input
+
+<Input
   type="number"
   class="Input Input--tiny"
-  value=quiz.totalQuestions
   min="1"
-  max=quiz.maximumQuestions}}
-  {{pluralize quiz.totalQuestions "question" without-count=true}}
-  out of {{quiz.channel.tracks.length}} possible.
+  max={{@quiz.maximumQuestions}}
+  value={{@quiz.totalQuestions}}
+/>
+
+{{pluralize @quiz.totalQuestions "question" without-count=true}}
+out of {{@quiz.channel.tracks.length}} possible.
 
 {{yield}}

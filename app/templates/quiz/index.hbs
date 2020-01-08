@@ -1,12 +1,6 @@
-<center>
-  <menu>
-    <button onclick={{route-action "startQuiz"}}>
-      Start quiz
-    </button>
-    {{!--
-    {{link-to "Settings" "quiz.settings"}}
-    --}}
-  </menu>
-</center>
+<menu>
+  <LinkTo @route="quiz.questions.question" @model="1">Start quiz</LinkTo>
+  {{!-- <LinkTo @route="quiz.settings">Settings</LinkTo> --}}
+</menu>
 
 {{outlet}}

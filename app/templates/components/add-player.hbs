@@ -1,5 +1,5 @@
-<form onsubmit={{action "add"}}>
-  {{input value=name placeholder=placeholder}}
+<form {{on "submit" this.add}}>
+  <Input type="text" value={{this.name}} placeholder={{this.placeholder}} />
   <button type="submit">Add player</button>
 </form>
 

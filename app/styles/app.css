@@ -52,12 +52,14 @@ menu {
   padding: 0;
   display: flex;
   flex-flow: column nowrap;
+  align-items: center;
   border-radius: 4px;
   background: var(--color-blue);
   min-width: 5em;
 }
 
 menu > * {
+  width: 100%;
   flex: 1;
   font-size: 0.8em;
   padding: 0.3em 0;
@@ -92,4 +94,3 @@ menu .active {
   left: 50%;
   transform: translateX(-50%);
 }
-

@@ -1,11 +1,3 @@
-import Component from '@ember/component'
-import {filterBy} from '@ember/object/computed'
+import Component from '@glimmer/component'
 
-export default Component.extend({
-  channelsWithTracks: filterBy('channels', 'totalTracks'),
-  actions: {
-    select(channel) {
-      this.onSelect(channel)
-    }
-  }
-})
+export default class ChannelChooserComponent extends Component {}

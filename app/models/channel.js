@@ -10,7 +10,7 @@ const {Model, attr, hasMany} = DS
 
 export default Model.extend({
   created: attr('number'),
-  updated: attr('timestamp'),
+  updated: attr('number'),
 
   title: attr('string'),
   slug: attr('string'),
@@ -35,8 +35,5 @@ export default Model.extend({
   // Relationships.
   images: hasMany('image', {async: true}),
   tracks: hasMany('track', {async: true}),
-
-  totalTracks: computed('tracks.[]', function() {
-    return this.hasMany('tracks').ids().length
-  })
+  tracksCount: attr('number', {default: 0})
 })

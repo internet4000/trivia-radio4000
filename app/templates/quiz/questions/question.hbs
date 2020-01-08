@@ -1,14 +1,12 @@
-<center>
-  <h2>What is the name of the track playing?</h2>
+<h2>What is the name of the track playing?</h2>
 
-  <QuestionItem
-    @answers={{model.answers}}
-    @onAnswer={{route-action "checkAnswer"}}></QuestionItem>
-</center>
+<QuestionItem
+  @answers={{@model.answers}}
+  @onAnswer={{route-action "checkAnswer"}}></QuestionItem>
 
 <details>
   <summary>I give up. Show me the player</summary>
-  <radio4000-player track-id={{model.question.id}} autoplay="true"></radio4000-player>
+  <radio4000-player track-id={{@model.question.id}} autoplay="true"></radio4000-player>
 </details>
 
 {{outlet}}
