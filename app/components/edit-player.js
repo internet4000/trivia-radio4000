@@ -1,13 +1,12 @@
 import Component from '@ember/component';
+import {action} from '@ember/object'
 
-export default Component.extend({
-  // props
-  player: undefined,
-  removePlayer: undefined,
+export default class EditPlayerComponent extends Component {
+  // player = undefined
+  // removePlayer = undefined
 
-  actions: {
-    removePlayer() {
-      this.get('removePlayer')(this.get('player'))
-    }
+  @action
+  removePlayer() {
+    this.get('removePlayer')(this.get('player'))
   }
-});
+}
