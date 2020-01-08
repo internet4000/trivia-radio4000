@@ -1,25 +1,21 @@
-<center>
-  <p>
-    <small>
-      {{#link-to 'quiz.index'}}
-        Quiz Radio4000<br>{{if model.channel model.channel.title model.id}}
-      {{/link-to}}
-    </small>
-  </p>
-</center>
+<p>
+  <small>
+    <LinkTo @route="quiz.index">
+      Quiz Radio4000<br>{{if @model.channel @model.channel.title @model.id}}
+    </LinkTo>
+  </small>
+</p>
 
 {{outlet}}
 
 {{!--
 {{#if model.players}}
   {{#link-to "quiz.players" title="Change players"}}
-    {{model.players.length}} {{playerLabel}}
+    {{@model.players.length}} {{playerLabel}}
   {{/link-to}}
 {{/if}}
 --}}
 
-<center>
-  <menu>
-    {{link-to "Leave quiz" "index"}}
-  </menu>
-</center>
+<menu>
+  <LinkTo @route="index">Leave quiz</LinkTo>
+</menu>

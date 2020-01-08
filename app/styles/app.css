@@ -52,6 +52,7 @@ menu {
   padding: 0;
   display: flex;
   flex-flow: column nowrap;
+  align-items: center;
   border-radius: 4px;
   background: var(--color-blue);
   min-width: 5em;
@@ -93,3 +94,6 @@ menu .active {
   transform: translateX(-50%);
 }
 
+.u-center {
+  text-align: center;
+}

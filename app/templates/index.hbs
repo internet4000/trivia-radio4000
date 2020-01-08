@@ -1,10 +1,10 @@
-<center>
+<div class="u-center">
   <p>Welcome to Quiz Radio4000!</p>
 
   <menu>
-    {{#link-to "new-game"}}New game{{/link-to}}
-    {{#link-to "about"}}About{{/link-to}}
+    <LinkTo @route="new-game">New Game</LinkTo>
+    <LinkTo @route="about">About</LinkTo>
   </menu>
-</center>
+</div>
 
 {{outlet}}
