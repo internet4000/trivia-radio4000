@@ -5,25 +5,19 @@
 {{#if @model.quiz.channel}}
   <menu>
     <LinkTo @route="quiz" @model={{@model.quiz.id}}>
-      Create quiz with
-      <em>{{@model.quiz.channel.title}}</em> <small>({{@model.quiz.channel.slug}})</small>
+      Create quiz with <em>{{@model.quiz.channel.title}}</em> <small>({{@model.quiz.channel.slug}})</small>
     </LinkTo>
-    <button onclick={{action "changeRadio"}}>
-      Change radio
-    </button>
+    <button type="button" onclick={{this.changeRadio}}>Change radio</button>
   </menu>
   <p>
     <QuestionsNumberChooser @quiz={{@model.quiz}} />
   </p>
 {{else}}
   <p>Select a Radio4000 channel to provide the questions and music:</p>
-{{/if}}
-
-{{#unless @model.quiz.channel}}
   <ChannelChooser
     @channels={{@model.channels}}
-    @onSelect={{action "setQuizChannel"}}>
-  </ChannelChooser>
-{{/unless}}
+    @onSelect={{this.setQuizChannel}}
+  ></ChannelChooser>
+{{/if}}
 
 {{outlet}}

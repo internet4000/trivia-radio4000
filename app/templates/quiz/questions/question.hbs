@@ -1,10 +1,8 @@
-<div class="u-center">
-  <h2>What is the name of the track playing?</h2>
+<h2>What is the name of the track playing?</h2>
 
-  <QuestionItem
-    @answers={{@model.answers}}
-    @onAnswer={{route-action "checkAnswer"}}></QuestionItem>
-</div>
+<QuestionItem
+  @answers={{@model.answers}}
+  @onAnswer={{route-action "checkAnswer"}}></QuestionItem>
 
 <details>
   <summary>I give up. Show me the player</summary>
