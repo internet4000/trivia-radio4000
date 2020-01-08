@@ -59,6 +59,7 @@ menu {
 }
 
 menu > * {
+  width: 100%;
   flex: 1;
   font-size: 0.8em;
   padding: 0.3em 0;
@@ -92,8 +93,4 @@ menu .active {
   z-index: 1;
   left: 50%;
   transform: translateX(-50%);
-}
-
-.u-center {
-  text-align: center;
 }
