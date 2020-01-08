@@ -1,3 +1,7 @@
 # https://www.netlify.com/docs/redirects/
 
+# Redirect domain aliases to primary domain
+https://trivia.radio4000.com/* https://quiz.radio4000.com/:splat 301!
+
+# Redirect requests to index.html, where our front-end starts.
 /* /index.html 200

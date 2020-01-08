@@ -1,7 +1,8 @@
-# trivia-radio4000
+# Quiz Radio4000
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A little quiz game on the music from Radio4000 channels.
+
+Visit https://quiz.radio4000.com
 
 ## Prerequisites
 
@@ -15,7 +16,7 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd trivia-radio4000`
+* `cd quiz-radio4000`
 * `npm install`
 
 ## Running / Development

@@ -1,4 +1,4 @@
-import {pickRandom} from 'trivia-radio4000/utils/random-helpers';
+import {pickRandom} from 'quiz-radio4000/utils/random-helpers';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | random-helpers', function() {
