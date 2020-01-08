@@ -1,9 +1,8 @@
-import Component from '@ember/component'
+import Component from '@glimmer/component'
 
-export default Component.extend({
-  actions: {
-    selectAnswer(answer) {
-      this.onAnswer(answer)
-    }
-  }
-})
+export default class QuestionItemComponent extends Component {
+  // @action
+  // selectAnswer(answer) {
+  //   this.onAnswer(answer)
+  // }
+}

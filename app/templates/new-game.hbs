@@ -1,25 +1,23 @@
-<center>
-  <menu>
-    <LinkTo @route="index">&larr; Main menu</LinkTo>
-  </menu>
+<menu>
+  <LinkTo @route="index">&larr; Main menu</LinkTo>
+</menu>
 
-  {{#if @model.quiz.channel}}
-    <menu>
-      <LinkTo @route="quiz" @model={{@model.quiz.id}}>
-        Create quiz with
-        <em>{{@model.quiz.channel.title}}</em> <small>({{@model.quiz.channel.slug}})</small>
-      </LinkTo>
-      <button onclick={{action "changeRadio"}}>
-        Change radio
-      </button>
-    </menu>
-    <p>
-      {{questions-number-chooser quiz=@model.quiz}}
-    </p>
-  {{else}}
-    <p>Select a Radio4000 channel to provide the questions and music:</p>
-  {{/if}}
-</center>
+{{#if @model.quiz.channel}}
+  <menu>
+    <LinkTo @route="quiz" @model={{@model.quiz.id}}>
+      Create quiz with
+      <em>{{@model.quiz.channel.title}}</em> <small>({{@model.quiz.channel.slug}})</small>
+    </LinkTo>
+    <button onclick={{action "changeRadio"}}>
+      Change radio
+    </button>
+  </menu>
+  <p>
+    <QuestionsNumberChooser @quiz={{@model.quiz}} />
+  </p>
+{{else}}
+  <p>Select a Radio4000 channel to provide the questions and music:</p>
+{{/if}}
 
 {{#unless @model.quiz.channel}}
   <ChannelChooser
